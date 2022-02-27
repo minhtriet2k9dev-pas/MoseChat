@@ -1,0 +1,15 @@
+{
+	"devDependencies": {
+		"eslint": "^8.10.0",
+		"nodemon": "^2.0.15"
+	},
+	"scripts": {
+		"start": "nodemon backend/server/index.js",
+		"test": "node backend/server/index.js"
+	},
+	"dependencies": {
+		"crypto-js": "^4.1.1",
+		"express": "^4.17.3",
+		"socket.io": "^4.4.1"
+	}
+}
