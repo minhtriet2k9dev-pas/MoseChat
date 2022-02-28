@@ -9,6 +9,12 @@ const userName = prompt("Choose your username");
 chatForm.addEventListener("submit", (e) => {
 	e.preventDefault();
 
+	const message = composeMsgBox.value;
+
+	if (message == "") {
+		return;
+	}
+
 	const today = new Date();
 	const date =
 		today.getFullYear() +
@@ -19,7 +25,6 @@ chatForm.addEventListener("submit", (e) => {
 	const time =
 		today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
-	const message = composeMsgBox.value;
 	const data = { name: userName, message: message, date: date, time: time };
 
 	composeMsgBox.value = "";
