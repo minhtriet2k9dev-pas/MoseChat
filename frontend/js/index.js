@@ -39,4 +39,6 @@ socket.on("user-chat", (data) => {
 
 	decordMsg(chatItem);
 	chatBox.appendChild(chatItem);
+	var elem = document.querySelector("#chat-box");
+	elem.scrollTop = elem.scrollHeight - elem.clientHeight;
 });
