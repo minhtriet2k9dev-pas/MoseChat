@@ -6,6 +6,17 @@ const composeMsgBox = document.querySelector("#compose-msg-box");
 
 const userName = prompt("Choose your username");
 
+var isValid = true;
+
+socket.on("valid", (valid) => {
+	if (valid) {
+		return;
+	}
+	alert("Invalid chain");
+	alert("The chat has been changed");
+	// isValid = false;
+});
+
 chatForm.addEventListener("submit", (e) => {
 	e.preventDefault();
 
@@ -29,7 +40,11 @@ chatForm.addEventListener("submit", (e) => {
 
 	composeMsgBox.value = "";
 
-	socket.emit("on-chat", data);
+	if (!isValid) {
+		alert("You wont allowed to chat anymore");
+	} else {
+		socket.emit("on-chat", data);
+	}
 });
 
 const chatBox = document.querySelector("#chat-box");

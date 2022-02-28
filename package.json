@@ -4,8 +4,8 @@
 		"nodemon": "^2.0.15"
 	},
 	"scripts": {
-		"start": "node backend/server/index.js",
-		"test": "nodemon backend/server/index.js"
+		"start": "node backend/server.js",
+		"test": "nodemon backend/server.js"
 	},
 	"dependencies": {
 		"crypto-js": "^4.1.1",
