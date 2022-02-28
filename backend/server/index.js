@@ -21,8 +21,8 @@ app.get("/js/index.js", (req, res) => {
 	res.sendFile(path.join(__dirname, "..", "..", "frontend/js/index.js"));
 });
 
-server.listen(3000, () => {
-	console.log(`Server is listening on port 3000}`);
+server.listen(() => {
+	console.log(`Server is listening on port 3000`);
 });
 
 io.on("connection", (socket) => {
