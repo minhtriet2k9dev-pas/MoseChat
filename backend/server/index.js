@@ -7,8 +7,6 @@ const { Server } = require("socket.io");
 
 const io = new Server(server);
 
-const PORT = 3000;
-
 app.get("/", (req, res) => {
 	res.sendFile(path.join(__dirname, "..", "..", "frontend/html/index.html"));
 });
@@ -23,7 +21,7 @@ app.get("/js/index.js", (req, res) => {
 	res.sendFile(path.join(__dirname, "..", "..", "frontend/js/index.js"));
 });
 
-server.listen(PORT, () => {
+server.listen(3000, () => {
 	console.log(`Server is listening on port ${PORT}`);
 });
 
