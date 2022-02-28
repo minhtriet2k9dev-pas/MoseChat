@@ -4,7 +4,7 @@ const express = require("express");
 const app = express();
 const server = http.createServer(app);
 const { Server } = require("socket.io");
-const blockchain = require("./../other/blockchain.js");
+const blockchain = require(path.join(__dirname, "..", "other/blockchain.js"));
 
 const io = new Server(server);
 
