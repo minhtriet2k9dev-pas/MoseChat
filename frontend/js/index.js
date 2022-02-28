@@ -31,10 +31,10 @@ const chatBox = document.querySelector("#chat-box");
 
 socket.on("user-chat", (data) => {
 	const chatItem = document.createElement("div");
-	chatItem.textContent = data.message;
+	chatItem.textContent = data.name + ": " + data.message;
 
 	function decordMsg(item) {
-		item.setAttribute("style", "");
+		item.setAttribute("style", "margin-left: 10px;");
 	}
 
 	decordMsg(chatItem);
