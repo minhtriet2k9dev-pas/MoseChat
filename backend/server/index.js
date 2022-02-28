@@ -4,7 +4,6 @@ const express = require("express");
 const app = express();
 const server = http.createServer(app);
 const { Server } = require("socket.io");
-const blockchain = require(path.join(__dirname, "..", "other/blockchain.js"));
 
 const io = new Server(server);
 
@@ -28,8 +27,6 @@ server.listen(PORT, () => {
 	console.log(`Server is listening on port ${PORT}`);
 });
 
-const chatBlock = new blockchain.BlockChain("");
-
 io.on("connection", (socket) => {
 	const today = new Date();
 	const date =
@@ -45,8 +42,5 @@ io.on("connection", (socket) => {
 
 	socket.on("on-chat", (data) => {
 		io.emit("user-chat", data);
-		chatBlock.addBlock(data);
-
-		console.log(chatBlock.chain);
 	});
 });
